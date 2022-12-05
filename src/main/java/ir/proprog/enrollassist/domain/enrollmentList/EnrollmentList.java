@@ -114,19 +114,21 @@ public class EnrollmentList {
         Grade GPA = owner.calculateGPA();
         GraduateLevel ownerGraduateLevel = owner.getGraduateLevel();
         int credits = sections.stream().mapToInt(section -> section.getCourse().getCredits()).sum();
+
         List<EnrollmentRuleViolation> violations = new ArrayList<>();
         if(credits < ownerGraduateLevel.getMinValidTermCredit())
             violations.add(new MinCreditsRequiredNotMet(ownerGraduateLevel.getMinValidTermCredit()));
-
         if (ownerGraduateLevel == GraduateLevel.Undergraduate) {
-            if(GPA.equals(Grade.ZERO) && owner.getTotalTakenCredits() == 0 && credits > 20)
+
+            if(GPA.equals(Grade.ZERO) && owner.getTotalTakenCredits() == 0 && credits > 20) {
                 violations.add(new MaxCreditsLimitExceeded(20));
+                System.out.println(credits);
+            }
             else if (credits > 14 && GPA.isLessThan(12))
                 violations.add(new MaxCreditsLimitExceeded(14));
             else if (credits > 20 && GPA.isLessThan(17))
                 violations.add(new MaxCreditsLimitExceeded(20));
         }
-
         if (credits > ownerGraduateLevel.getMaxValidCredits())
             violations.add(new MaxCreditsLimitExceeded(ownerGraduateLevel.getMaxValidCredits()));
 

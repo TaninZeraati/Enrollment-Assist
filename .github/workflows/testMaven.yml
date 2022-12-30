@@ -12,4 +12,4 @@ jobs:
       - name: Test with Maven
         run: mvn -B test --file pom.xml   
       - name: Update dependency graph
-        uses: advanced-security/maven-dependency-submission-action@ca9f3c57287c64e0e00ebab2c319512fab9f06b9
+

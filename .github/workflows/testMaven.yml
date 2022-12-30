@@ -2,9 +2,9 @@ name: Test CA5
 
 on:
   push:
-    branches: [ "CA1" ]
+    branches: [ "CA5" ]
   pull_request:
-    branches: [ "CA1" ]
+    branches: [ "CA5" ]
 
 jobs:
   build:

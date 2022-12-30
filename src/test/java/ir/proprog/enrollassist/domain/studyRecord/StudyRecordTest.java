@@ -1,4 +1,4 @@
-package domain.studyRecord;
+package ir.proprog.enrollassist.domain.studyRecord;
 
 import ir.proprog.enrollassist.Exception.ExceptionList;
 import ir.proprog.enrollassist.domain.GraduateLevel;

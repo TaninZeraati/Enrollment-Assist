@@ -185,7 +185,9 @@ public class checkValidGPALimitTest {
     public void GPALess17Test() {
         List<EnrollmentRuleViolation> expectedViolations = new ArrayList<>();
 
-        expectedViolations.add(new MaxCreditsLimitExceeded(20));
+//        for checking workflow change this to 14 inorder to have error
+        expectedViolations.add(new MaxCreditsLimitExceeded(14));
+//        expectedViolations.add(new MaxCreditsLimitExceeded(20));
 
 
         List<EnrollmentRuleViolation> violations = this.undergradless17List.checkValidGPALimit();
@@ -208,6 +210,5 @@ public class checkValidGPALimitTest {
 
 
     }
-//adding workflow
 
 }

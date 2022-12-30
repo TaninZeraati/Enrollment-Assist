@@ -1,8 +1,6 @@
 name: Test CA5
 
-on:
-  push:
-    branches: -CA5
+on: [push]
 
 jobs:
   build:

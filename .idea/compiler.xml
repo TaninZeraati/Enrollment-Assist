@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="enroll-assist" />
+        <module name="EnrollmentList-CA6" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EnrollmentList-CA6" options="-parameters" />
       <module name="enroll-assist" options="-parameters" />
     </option>
   </component>
